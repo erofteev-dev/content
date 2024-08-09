@@ -1,0 +1,16 @@
+name: Site build
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Site build
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.PLATFORM_TOKEN }}
+          repository: erofteev-dev/erofteev-dev.github.io
+          event-type: content_update
