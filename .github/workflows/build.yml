@@ -1,16 +1,18 @@
-name: Site build
+name: Content deploy
 on:
   push:
     branches:
       - main
+    paths:
+      - 'content/**'
 
 jobs:
-  trigger:
+  notify:
     runs-on: ubuntu-latest
     steps:
       - name: Site build
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.PLATFORM_TOKEN }}
+          token: ${{ secrets.DEPLOY_TOKEN }}
           repository: erofteev-dev/erofteev-dev.github.io
           event-type: content_update
