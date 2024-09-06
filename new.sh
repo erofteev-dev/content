@@ -9,6 +9,7 @@ NC='\033[0m' # No Color
 # Переменные
 TITLE=""
 DESCRIPTION=""
+KEYWORDS=""
 FOLDER=""
 AUTHOR=""
 TAGS=""
@@ -122,6 +123,7 @@ cat <<EOF > "content/$FOLDER/index.md"
 ---
 title: "$TITLE"
 description: "$DESCRIPTION"
+keywords: "$KEYWORDS"
 author: "$AUTHOR"
 date: $(date +'%Y-%m-%d')
 tags: [$TAGS]
